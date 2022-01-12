@@ -1,1 +1,2 @@
 # cursoProJS
+#ejercicios de JavaScript
