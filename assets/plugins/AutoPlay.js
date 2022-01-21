@@ -1,4 +1,3 @@
-
 function AutoPlay(){}
 
 AutoPlay.prototype.run = function(Player){
