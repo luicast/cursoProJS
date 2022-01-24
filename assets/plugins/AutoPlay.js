@@ -1,9 +1,13 @@
-function AutoPlay(){}
-AutoPlay.prototype.run = function(Player){
-    if(!Player.muted){
-        Player.muted = true
+import MediaPlayer from "../MediaPlayer.js"
+class AutoPlay {
+    constructor(){}
+    run(player: MediaPlayer) {
+        if(!player.muted){
+            player.muted = true
+        }
+        player.play()
     }
-    Player.play()
 }
+
 
 export default AutoPlay
