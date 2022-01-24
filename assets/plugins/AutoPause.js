@@ -1,13 +1,29 @@
 class AutoPause {
-    run(player){
-        const observer = new IntersectionObserver(this.handlerIntersection, {
-            threshold: 0.25
-        })
-        observer.observe(player.media)
+    constructor(){
+        this.threshold = 0.25
+        this.handlerIntersection = this.handlerIntersection.bind()
     }
+    run(player){
+        this.player = player
+
+        const observer = new IntersectionObserver(this.handlerIntersection, {
+            threshold: this.threshold
+        })
+
+        observer.observe(this.player.media)
+    }
+
     handlerIntersection(entries){
         const entry = entries[0]
-        console.log(entry)
+
+        const isVisible = entry.intersectionRadio >= this.threshold
+
+        if(isVisible){
+            this.player.play()
+        }else{
+            this.player.pause()
+        }
+        
     }
 }
 
