@@ -118,7 +118,93 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"ejercicios/typescript/index.ts":[function(require,module,exports) {
+console.log('hello typescript'); //boolean
 
+var muted = true;
+muted = false; //numeros
+
+var age = 6;
+var numerador = 42;
+var denominador = age;
+var resultado = numerador / denominador; //string
+
+var nombre = 'Luis';
+var saludo = "me llamo ".concat(nombre); //arreglos
+
+var people = [];
+people = ["Isabel", "Nicole", "Raul"]; // people.push(9000)
+
+var peopleandNumbers = [];
+peopleandNumbers.push("luis");
+peopleandNumbers.push(89); // Enum
+
+var Color;
+
+(function (Color) {
+  Color["Rojo"] = "rojos";
+  Color["Verde"] = "verde";
+  Color["Azul"] = "azul";
+  Color["Amarillo"] = "amarillo";
+})(Color || (Color = {}));
+
+var colorFavorito = Color.Azul;
+console.log("mi color favorito es ".concat(colorFavorito)); // any
+
+var comodin = 'joker';
+comodin = {
+  type: 'wildcard'
+}; // object
+
+var someObject = {
+  type: 'wildcard'
+}; // funciones
+
+function add(a, b) {
+  return a + b;
+}
+
+var sum = add(2, 3);
+
+function createAdder(a) {
+  return function (b) {
+    return b + a;
+  };
+}
+
+;
+var addFor = createAdder(4);
+var forPlus6 = addFor(6);
+
+var myAdd = function (x, y) {
+  return x + y;
+};
+
+function fullName(firstName, lastName) {
+  return "".concat(firstName, " ").concat(lastName);
+}
+
+var luis = fullName('luis', 'castilla');
+var dayro = fullName('dayro');
+console.log(dayro);
+;
+var rect = {
+  ancho: 4,
+  alto: 6
+};
+
+function area(r) {
+  return r.alto * r.ancho;
+}
+
+;
+var areaRect = area(rect);
+console.log(areaRect);
+
+rect.toString = function () {
+  return this.color ? "Un rectangulo ".concat(this.color) : "Un rectangulo";
+};
+
+console.log(rect.toString());
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -147,7 +233,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35405" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38017" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
