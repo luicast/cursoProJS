@@ -1,2 +1,0 @@
-# cursoProJS
-#ejercicios de JavaScript
